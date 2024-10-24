@@ -29,11 +29,12 @@
 | 12:00     | Presentation: Git and Github                                                   |
 | 12:30     | Lunch break                                                                    |
 | 13:30     | Code development                                                               |
+| 15:00     | Guest presentation: Apprenticeships by Joseph Walker                           |
 | 16:00     | End of Day                                                                     |
 | Tuesday   |                                                                                |
-| 10:00     | Standup                                                                        |
-| 10:30     | Presentation: HTML/CSS/JS                                                      |
-| 11:00     | Code Development                                                               |
+| 10:00     | Standup and Presentation: HTML/CSS/JS                                          |
+| 11:00     | Guest presentation: What It Means To Be A UX Designer by Gabi Mikolajczak      |
+| 11:30     | Code development                                                               |
 | 12:30     | Lunch and Learn: Design at Softwire                                            |
 | 13:30     | Code development                                                               |
 | 16:00     | End of Day                                                                     |
@@ -41,17 +42,16 @@
 | 10:00     | Standup                                                                        |
 | 10:30     | Presentation: HTTP Requests and Backend Development                            |
 | 11:00     | Code Development                                                               |
-| 12:00     | Guest presentation: BBC Sport: How to Build a Huge Website (Cameron McCormack) |
 | 12:30     | Lunch break                                                                    |
 | 13:30     | Code development                                                               |
 | 16:00     | End of Day                                                                     |
 | Thursday  |                                                                                |
 | 10:00     | Standup                                                                        |
-| 10:30     | Presentation: DevOps: How is our Tetris site hosted?                           |
+| 11:00     | Guest presentation: Recruitment by Frances Portaluri                           |
 | 11:30     | Code Development                                                               |
 | 12:30     | Lunch break                                                                    |
-| 14:00     | Guest presentation: Recruitment (Frances Portaluri)                            |
-| 14:30     | Code development                                                               |
+| 13:30     | Presentation: DevOps: How is our Tetris site hosted?                           |
+| 14:00     | Code development                                                               |
 | 16:00     | End of Day                                                                     |
 | Friday    |                                                                                |
 | 10:00     | Standup                                                                        |
@@ -68,10 +68,10 @@
 
 | What                 | Why                                                          | Where                                                                                                                  |
 |----------------------|--------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| Trello Board         | To keep track of tasks and their statuses                    | [here](https://trello.com/invite/b/jWpaIr3m/ATTI64824ad2e7e415076b98b3ae1923983d775BDC6A/work-experience-october-2023) |
-| GitHub repo          | Central location for all of our code                         | [here](https://github.com/KrisGwynne/softwire-work-experience-oct-2023)                                                |
-| Live site (frontend) | Where our current `main` branch code is running the frontend | https://softwire-work-experience-oct-2023.vercel.app/                                                                  |
-| Live site (backend)  | Where our current `main` branch code is running the backend  | https://softwire-work-experience-oct-2023-backend.vercel.app/                                                          |
+| Trello Board         | To keep track of tasks and their statuses                    | [here](https://trello.com/invite/b/671a5f87c5d1e937ff7db87a/ATTI529158fc41b10338c17248777341fbb2D374095F/tetris)       |
+| GitHub repo          | Central location for all of our code                         | [here](https://github.com/JordanEAbbottSoftwire/softwire-work-experience-oct-2024/tree/main)                           |
+| Live site (frontend) | Where our current `main` branch code is running the frontend | :/                                                                                                                     |
+| Live site (backend)  | Where our current `main` branch code is running the backend  | :/                                                                                                                     |
 
 ### Useful HTML/CSS/JavaScript Guides
 
@@ -88,7 +88,7 @@
 ## Technical Overview
 
 The codebase has two components: frontend and backend. The `main` branch of the repository is set to run on Vercel 
-(a cloud platform). I've set this all up for you so you don't need to worry about how this hosting works, but I'll 
+(a cloud platform). This has already been setup so you don't need to worry about how this hosting works, but we'll 
 be giving a quick overview on Wednesday to make it feel less "magic".
 
 ### Frontend
@@ -117,7 +117,7 @@ The backend codebase is a web application written using Node.js/Express. This se
 - Redirects users to the correct frontend page when they go to its URL.
 - Implements "endpoints" - code that the website running in the browser can call to get, modify or delete information stored in the backend. These will generally be accessed using the url `<siteurl>/api/<endpoint_name>`
 
-The first of these points, redirecting to the correct page, is already set up to work in the backend - so you don't need to worry about this! I'll be explaing how it works (for interest only) on Wednesday morning.
+The first of these points, redirecting to the correct page, is already set up to work in the backend - so you don't need to worry about this! We'll be explaing how it works (for interest only) on Wednesday morning.
 
 Depending on the features that we want to add to our Tetris game, we will have to add some endpoints to the backend codebase. We can discuss these once we've decided what we want our game to do!
 
@@ -161,7 +161,7 @@ To run and access the website locally, you can do the following, for each of the
 
 This section will all be covered by a presentation on the first day, so don't worry about this until we've spoken about Git/GitHub! It should be a useful reminder in future though!
 
-Git can be a bit confusing if you're using it for the first time. If you're unsure about any step, feel free to grab me and we can go over it.
+Git can be a bit confusing if you're using it for the first time. If you're unsure about any step, feel free to grab one of us and we can go over it.
 
 ### Initial Repository Setup
 
@@ -193,7 +193,7 @@ Try not to make changes on the `main` branch, this branch should always only con
 ### Requesting a Review
 
 Once you are happy with your code, you can open GitHub in a browser and do the following:
-- Navigate to the page for the repository [here](https://github.com/KrisGwynne/softwire-work-experience-oct-2023)
+- Navigate to the page for the repository [here](https://github.com/JordanEAbbottSoftwire/softwire-work-experience-oct-2024/)
 - Select "Pull requests" in the bar at the top
 - Click the "New pull request" button
 - Set the branches as follows:
@@ -201,6 +201,6 @@ Once you are happy with your code, you can open GitHub in a browser and do the f
     - compare: `your-own-feature-branch-name`
 - Click "Create pull request"
 - Add a sensible title and description of your changes, then click "Create pull request"
-- I will then review your changes and either make some comments or approve it:
-    - If I make comments, you can make the changes on your branch locally and `git push` to update the code in GitHub
-    - If I approve it, we can merge it into `main`. Wahey!
+- We will review the code and either make some comments or approve it:
+    - If there are comments, you can make the changes on your branch locally and `git push` to update the code in GitHub
+    - If it's approved, we can merge it into `main`. Wahey!
