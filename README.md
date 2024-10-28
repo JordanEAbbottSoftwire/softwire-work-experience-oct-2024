@@ -1,4 +1,4 @@
-# Softwire Work Experience - Oct 2023
+# Softwire Work Experience - Oct - Nov 2024
 
 ## Contents
 <!-- TOC -->
@@ -70,8 +70,8 @@
 |----------------------|--------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | Trello Board         | To keep track of tasks and their statuses                    | [here](https://trello.com/invite/b/671a5f87c5d1e937ff7db87a/ATTI529158fc41b10338c17248777341fbb2D374095F/tetris)       |
 | GitHub repo          | Central location for all of our code                         | [here](https://github.com/JordanEAbbottSoftwire/softwire-work-experience-oct-2024/tree/main)                           |
-| Live site (frontend) | Where our current `main` branch code is running the frontend | :/                                                                                                                     |
-| Live site (backend)  | Where our current `main` branch code is running the backend  | :/                                                                                                                     |
+| Live site (frontend) | Where our current `main` branch code is running the frontend | https://softwire-work-experience-oct-2024.vercel.app                                                                   |
+| Live site (backend)  | Where our current `main` branch code is running the backend  | https://tetris-backend-murex.vercel.app                                                                                |
 
 ### Useful HTML/CSS/JavaScript Guides
 
@@ -101,7 +101,7 @@ written in HTML/CSS/JavaScript.
 
 When running (either on Vercel or locally), the files in the frontend directory are available at `<siteurl>/<filename>`. 
 The `index.html` home page is also available at `<siteurl>` and all HTML files can be accessed without the `.html` 
-extension (i.e. `https://softwire-work-experience-oct-2023.vercel.app/game.html` and `https://softwire-work-experience-oct-2023.vercel.app/game` will both route to the same page).
+extension (i.e. `https://softwire-work-experience-oct-2024.vercel.app/game.html` and `https://softwire-work-experience-oct-2024.vercel.app/game` will both route to the same page).
 
 Lots of websites use frameworks or libraries rather than "Vanilla JavaScript" to put together the site (you may have 
 heard of React, Angular, Vue.js or many more, for example). These provide useful in-build functionality that makes it
@@ -167,7 +167,7 @@ Git can be a bit confusing if you're using it for the first time. If you're unsu
 
 - Clone the repo:
     - This creates a local copy of the code that you can make changes to on your computer. You can do this with the following command line command:
-    - `git clone https://github.com/KrisGwynne/softwire-work-experience-oct-2023.git`
+    - `git clone https://github.com/JordanEAbbottSoftwire/softwire-work-experience-oct-2024.git`
 
 ### Working on a Feature
 
