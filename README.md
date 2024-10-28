@@ -126,7 +126,9 @@ Depending on the features that we want to add to our Tetris game, we will have t
 
 To install git, head to https://git-scm.com/downloads/win - I recommend using the winget tool in powershell.
 
-To install npm, head to https://github.com/coreybutler/nvm-windows/releases and download `nvm-setup.exe`
+To install npm, head to https://github.com/coreybutler/nvm-windows/releases and download `nvm-setup.exe`.
+
+To get the `npm` command line tool working: In a console, type `nvm install latest`, then `nvm use latest`. You should now be able to do `npm -v` and it should return the version of node installed. If it shows an error relating to not being able to run the script, open powershell as an admin and type `Set-ExecutionPolicy RemoteSigned`, then accept yes to all. `npm -v` should now work.
 
 To test your changes whilst you are developing, you will need to be able to run the website locally. This means that the
 backend code is running on your own computer and you can access it in a browser without having to
