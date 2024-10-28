@@ -58,7 +58,7 @@
 | 10:30     | Code Development                                                               |
 | 12:30     | Lunch break                                                                    |
 | 13:30     | Presentation Prep                                                              |
-| 14:30     | Presentation                                                                   |
+| 14:45     | Presentation                                                                   |
 | 15:00     | Retro                                                                          |
 | 16:00     | End of Day                                                                     |
 
