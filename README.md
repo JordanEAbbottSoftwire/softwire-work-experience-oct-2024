@@ -124,6 +124,9 @@ Depending on the features that we want to add to our Tetris game, we will have t
 
 ## Running Locally
 
+To install git, head to https://git-scm.com/downloads/win - I recommend using the winget tool in powershell
+To install npm, head to https://github.com/coreybutler/nvm-windows/releases and download `nvm-setup.exe`
+
 To test your changes whilst you are developing, you will need to be able to run the website locally. This means that the
 backend code is running on your own computer and you can access it in a browser without having to
 deploy the app publicly over the internet.
