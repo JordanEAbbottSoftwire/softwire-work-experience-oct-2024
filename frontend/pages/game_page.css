@@ -5,6 +5,7 @@
 .purple { color: purple; }
 .orange { color: orange; }
 body { 
+    font-family: "Press Start 2P", system-ui;
     text-align: center; 
     background-image: url(https://wallpapercave.com/wp/wp2675347.jpg);
     background-position: center;
@@ -15,6 +16,10 @@ body {
 }
 h1 { 
     font-size: 65px ;
+}
+
+h1 span {
+    display: inline;
 }
 
 h2 { 
@@ -40,3 +45,8 @@ h2 {
     font-size: 25px ;
 }
 
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
