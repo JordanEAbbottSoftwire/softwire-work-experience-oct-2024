@@ -1,0 +1,42 @@
+.red { color: red; }
+.green { color: green; }
+.blue { color: blue; }
+.magenta { color: magenta; }
+.purple { color: purple; }
+.orange { color: orange; }
+body { 
+    text-align: center; 
+    background-image: url(https://wallpapercave.com/wp/wp2675347.jpg);
+    background-position: center;
+    margin: 0;
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1 { 
+    font-size: 65px ;
+}
+
+h2 { 
+    color: blanchedalmond;
+    font-size: 40px;
+}
+
+.resume_button { 
+    background-color: green;
+    color: white;
+    font-size: 25px ;
+}
+
+.pause_button { 
+    background-color: grey;
+    color: white;
+    font-size: 25px ;
+}
+
+.quit_button { 
+    background-color: grey;
+    color: white;
+    font-size: 25px ;
+}
+
