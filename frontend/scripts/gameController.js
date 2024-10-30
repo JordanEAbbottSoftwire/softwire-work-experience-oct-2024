@@ -30,6 +30,10 @@ const TETROMINO_SHAPES = {
 
 // Gets a random piece name from TETROMINO_SHAPES
 function getRandomPiece() {
+    rand = Math.floor(Math.random() * 7);
+    block_list = [TETROMINO_SHAPES.I_PIECE, TETROMINO_SHAPES.J_PIECE, TETROMINO_SHAPES.L_PIECE, TETROMINO_SHAPES.O_PIECE, TETROMINO_SHAPES.S_PIECE, TETROMINO_SHAPES.T_PIECE, TETROMINO_SHAPES.Z_PIECE]
+    shape = block_list[rand]
+    console.log(shape)
 }
 
 function create2DArray(width, height) {
