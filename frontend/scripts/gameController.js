@@ -2,13 +2,29 @@ const WIDTH = 10
 const HEIGHT = 20
 
 const TETROMINO_SHAPES = {
-    I_PIECE: [],
-    T_PIECE: [],
-    L_PIECE: [],
-    J_PIECE: [],
-    S_PIECE: [],
-    Z_PIECE: [],
-    O_PIECE: [],
+    I_PIECE: [[null, "cyan", null, null],
+              [null, "cyan", null, null],
+              [null, "cyan", null, null],
+              [null, "cyan", null, null]],
+    T_PIECE: [["purple", "purple", "purple"],
+              [null, "purple", null],
+              [null, null, null],],
+    L_PIECE: [[null, null, "orange"],
+              ["orange", "orange", "orange"],
+              [null, null, null],],
+    J_PIECE: [["blue", null, null],
+              ["blue", "blue", "blue"],
+              [null, null, null],],
+    S_PIECE: [[null, "green", "green"],
+              ["green", "green", null],
+              [null, null, null],],
+    Z_PIECE: [["red", "red", null],
+              [null, "red", "red"],
+              [null, null, null],],
+    O_PIECE: [[null, null, null, null],
+              [null, "yellow", "yellow", null],
+              [null, "yellow", "yellow", null],
+              [null, null, null, null]],
 
 }
 
