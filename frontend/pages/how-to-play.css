@@ -1,11 +1,28 @@
 body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: url(https://static1.gamerantimages.com/wordpress/wp-content/uploads/2020/06/tetris-featured.jpg);
-    color:rgb(0, 0, 0);
-    text-align: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.content {
+    position: relative;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgba(59, 63, 70, 0.4);
+    color: white;
+    width: fit-content;
+    padding: 0px 20px 20px 20px;
+    border-radius: 10px;
 }
 
 .instruction_title {
-        font-family: 'Press Start 2P', system-ui;
+    font-family: 'Press Start 2P', system-ui;
     font-size: 3em;
 }
 
