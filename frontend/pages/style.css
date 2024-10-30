@@ -1,0 +1,121 @@
+body {
+    background-image: url(background.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+    color: black;
+    font-family: "Press Start 2P";
+    font-style: italic;
+    font-weight: 700;
+    font-size: 150px;
+    border-style: outset;
+    border-width: 20px;
+    border-color: gold;
+    border-radius: 10px;
+    text-align: center;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    padding: 80px;
+    margin: 40px auto; 
+    width: fit-content;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 60px; 
+    margin-top: 100px;
+}
+
+.button {
+    font-family: "Press Start 2P";
+    font-style: italic;
+    font-weight: 300;
+    font-size: 40px;
+    border-style: outset;
+    border-width: 15px;
+    border-color: gold;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(30, 211, 24);
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    padding: 50px;
+    width: fit-content; 
+}
+
+.button i {
+    margin-right: 5px; /* Adds space between the icon and the text */
+    vertical-align: middle; /* Aligns the icon with the text */
+}
+
+/* Modal CSS */
+,::after, *::before {
+    box-sizing: border-box;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
