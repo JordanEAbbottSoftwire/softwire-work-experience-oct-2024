@@ -1,5 +1,5 @@
 body {
-    background-image: url(background.webp);
+    background-image: url(../resources/background.webp);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
