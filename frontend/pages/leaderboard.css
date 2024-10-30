@@ -11,26 +11,11 @@ body {
 
 }
 /* Center the heading */
-h1 {
+.leaderboard-header {
     text-align: center;
     margin-top: 30px;
     font-size: 2.5em;
     color: #ffdd57; /* Bright color for contrast */
-}
-
-.blur-bgimage {
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background-color: #1d1f21;
-    color: #ffffff;
-}
-
-.blur-bgimage:before {
-    z-index: -1;
-    background: inherit;
-    width:100%;
-    height: 100%;
-    filter: blur(4px);
 }
 
 /* Highscore table styles */
@@ -43,6 +28,7 @@ h1 {
 table {
     border-collapse: collapse;
     width: 80%;
+    color: white;
     max-width: 600px;
     background-color: #3b3f47;
     border-radius: 8px;
