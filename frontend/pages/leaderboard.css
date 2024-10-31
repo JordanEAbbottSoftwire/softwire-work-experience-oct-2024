@@ -2,13 +2,11 @@
 
 /* Reset some default styles */
 body {
-    margin: 0;
-    padding: 0;
-    background-image: url(https://static.pressakey.de/gfxgames/Tetris-Ultimate-2662.jpg);
+    background-image: url(../resources/background.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height:95vh
-
 }
 /* Center the heading */
 .leaderboard-header {

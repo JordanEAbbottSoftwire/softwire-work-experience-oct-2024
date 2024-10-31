@@ -2,7 +2,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(https://static1.gamerantimages.com/wordpress/wp-content/uploads/2020/06/tetris-featured.jpg);
+    background-image: url(../resources/background.webp);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -19,6 +19,7 @@ body {
     width: fit-content;
     padding: 0px 20px 20px 20px;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .instruction_title {
@@ -55,5 +56,6 @@ button {
 }
 
 button:hover {
+    margin-top: -5px;
     border-width: 5px;   
 }
