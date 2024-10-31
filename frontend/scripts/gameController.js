@@ -33,7 +33,7 @@ function getRandomPiece() {
     rand = Math.floor(Math.random() * 7);
     block_list = Object.keys(TETROMINO_SHAPES);
     shape = block_list[rand];
-    return map_tetromino_shapes(shape);
+    return {xPosition: 4, yPosition: 0, Piece: map_tetromino_shapes(shape)} ;
 }
 
 function map_tetromino_shapes(shape) {
