@@ -1,5 +1,4 @@
 import { createGame } from "./gameController.js";
-import { getRandomPiece } from "./gameController.js";
 
 const gameController = createGame();
 const canvasElement = document.getElementById("gamegrid");
@@ -25,15 +24,17 @@ function drawBoard() {
 
 drawBoard();
 
-function drawTetromino(tetromino, offsetX, offsetY) {
-    tetromino.forEach((row, y) => {
+function drawTetromino(tetromino) {
+    const offsetX = tetromino.xPosition;
+    const offsetY = tetromino.yPosition;
+    tetromino.piece.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value) {
-                ctx.fillStyle = 'cyan'; // You can change the color for each tetromino
+                ctx.fillStyle = value; // You can change the color for each tetromino
                 ctx.fillRect((x + offsetX) * cellSize, (y + offsetY) * cellSize, cellSize, cellSize);
             }
         });
     });
 }
 
-drawTetromino(getRandomPiece(), 4, 0)
+drawTetromino(gameController.gamesState.activeTetromino);
