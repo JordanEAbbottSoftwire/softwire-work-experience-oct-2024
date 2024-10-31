@@ -1,5 +1,5 @@
 import { createGame } from "./gameController.js";
-import { map_tetromino_shape } from "./gameController.js";
+import { getRandomPiece } from "./gameController.js";
 
 const gameController = createGame();
 const canvasElement = document.getElementById("gamegrid");
@@ -25,17 +25,15 @@ function drawBoard() {
 
 drawBoard();
 
-function drawTetromino() {
-    
-    const gameBoard = gameController.getGameState().gameBoard;
-    ctx.fillStyle = "white";
-    ctx.fillRect(0,0, (gameBoard[0].length * cellSize) + 1, (gameBoard.length * cellSize) + 1);
-    ctx.fillStyle = "black";
-
-    for (let i = 0; i < gameBoard.length; i++) {
-        const row =  gameBoard[i]
-        for (let j = 0; j < row.length; j++){
-            ctx.fillRect(j * cellSize + 1, i * cellSize + 1, cellSize - 1, cellSize - 1);
-        }
-    }
+function drawTetromino(tetromino, offsetX, offsetY) {
+    tetromino.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value) {
+                ctx.fillStyle = 'cyan'; // You can change the color for each tetromino
+                ctx.fillRect((x + offsetX) * cellSize, (y + offsetY) * cellSize, cellSize, cellSize);
+            }
+        });
+    });
 }
+
+drawTetromino(getRandomPiece(), 4, 0)
