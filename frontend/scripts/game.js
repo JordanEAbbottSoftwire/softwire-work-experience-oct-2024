@@ -23,3 +23,18 @@ function drawBoard() {
 }
 
 drawBoard();
+
+function drawTetromino(tetromino) {
+    const offsetX = tetromino.xPosition;
+    const offsetY = tetromino.yPosition;
+    tetromino.piece.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value) {
+                ctx.fillStyle = value; // You can change the color for each tetromino
+                ctx.fillRect((x + offsetX) * cellSize, (y + offsetY) * cellSize, cellSize, cellSize);
+            }
+        });
+    });
+}
+
+drawTetromino(gameController.gamesState.activeTetromino);
