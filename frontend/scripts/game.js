@@ -1,4 +1,5 @@
 import { createGame } from "./gameController.js";
+import { map_tetromino_shape } from "./gameController.js";
 
 const gameController = createGame();
 const canvasElement = document.getElementById("gamegrid");
@@ -23,3 +24,18 @@ function drawBoard() {
 }
 
 drawBoard();
+
+function drawTetromino() {
+    
+    const gameBoard = gameController.getGameState().gameBoard;
+    ctx.fillStyle = "white";
+    ctx.fillRect(0,0, (gameBoard[0].length * cellSize) + 1, (gameBoard.length * cellSize) + 1);
+    ctx.fillStyle = "black";
+
+    for (let i = 0; i < gameBoard.length; i++) {
+        const row =  gameBoard[i]
+        for (let j = 0; j < row.length; j++){
+            ctx.fillRect(j * cellSize + 1, i * cellSize + 1, cellSize - 1, cellSize - 1);
+        }
+    }
+}
