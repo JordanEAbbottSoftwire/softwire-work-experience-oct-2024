@@ -52,8 +52,8 @@ function create2DArray(width, height) {
 
 const emptyGameState = {
     gameBoard: create2DArray(WIDTH, HEIGHT),
-    activeTetromino: null,
-    upcomingTetrominos: [],
+    activeTetromino: getRandomPiece(),
+    upcomingTetrominos: [getRandomPiece(), getRandomPiece(), getRandomPiece()],
     score: 0,
     holdPiece: null,
     isGameOver: false,
