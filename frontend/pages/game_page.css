@@ -7,13 +7,11 @@
 body { 
     font-family: "Press Start 2P", system-ui;
     text-align: center; 
-    background-image: url(https://wallpapercave.com/wp/wp2675347.jpg);
-    background-position: center;
-    margin: 0;
-    height: 95vh ;
-    width: 100%;
-    background-size: cover;
+    background-image: url(../resources/background.webp);
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 .tetrisHeader { 
     font-size: 65px ;
