@@ -30,15 +30,24 @@ const TETROMINO_SHAPES = {
 
 // Gets a random piece name from TETROMINO_SHAPES
 function getRandomPiece() {
+    rand = Math.floor(Math.random() * 7);
+    block_list = Object.keys(TETROMINO_SHAPES);
+    shape = block_list[rand];
+    return map_tetromino_shapes(shape);
 }
 
+function map_tetromino_shapes(shape) {
+    return TETROMINO_SHAPES[shape];
+}
+
+
 function create2DArray(width, height) {
-    let array = new Array(height)
+    let array = new Array(height);
     for (let i = 0; i < array.length; i++) {
-        array[i] = new Array(width).fill(null)
+        array[i] = new Array(width).fill(null);
     }
 
-    return array
+    return array;
 }
 
 const emptyGameState = {
