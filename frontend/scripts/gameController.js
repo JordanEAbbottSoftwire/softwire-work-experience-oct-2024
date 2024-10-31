@@ -31,10 +31,16 @@ const TETROMINO_SHAPES = {
 // Gets a random piece name from TETROMINO_SHAPES
 function getRandomPiece() {
     rand = Math.floor(Math.random() * 7);
+<<<<<<< HEAD
     block_list = Object.keys(TETROMINO_SHAPES)
     shape = block_list[rand]
     map_tetromino_shapes(shape)
 
+=======
+    block_list = [TETROMINO_SHAPES.I_PIECE, TETROMINO_SHAPES.J_PIECE, TETROMINO_SHAPES.L_PIECE, TETROMINO_SHAPES.O_PIECE, TETROMINO_SHAPES.S_PIECE, TETROMINO_SHAPES.T_PIECE, TETROMINO_SHAPES.Z_PIECE]
+    shape = block_list[rand]
+    console.log(shape)
+>>>>>>> 4daa5013fb4fe96a503ecb607ff8cb1b361fc756
 }
 
 function map_tetromino_shapes(shape) {
