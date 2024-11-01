@@ -1,5 +1,7 @@
 import { createGame } from "./gameController.js";
 
+const frame_time = 50
+let frame_count = 0
 const gameController = createGame();
 const canvasElement = document.getElementById("gamegrid");
 const ctx = canvasElement.getContext('2d');
@@ -24,7 +26,8 @@ function drawBoard() {
 
 drawBoard();
 
-function drawTetromino(tetromino) {
+function drawTetromino() {
+    const tetromino = gameController.getGameState().activeTetromino
     const offsetX = tetromino.xPosition;
     const offsetY = tetromino.yPosition;
     tetromino.piece.forEach((row, y) => {
@@ -37,4 +40,15 @@ function drawTetromino(tetromino) {
     });
 }
 
-drawTetromino(gameController.gamesState.activeTetromino);
+function gameLoop() {
+    frame_count += 1
+    if (frame_count >= frame_time) {
+        gameController.gameTick()
+        drawBoard()
+        drawTetromino()
+        frame_count = 0
+    }
+    requestAnimationFrame(gameLoop)
+}
+
+gameLoop()

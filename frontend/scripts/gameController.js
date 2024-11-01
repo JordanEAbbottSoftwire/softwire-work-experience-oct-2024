@@ -72,7 +72,8 @@ export function createGame(loadedState = emptyGameState) {
         Move the game forward one time step
         */
         gameTick: function() {
-            // 1. Move the active piece down
+            this.movePieceDown()
+            // setInterval(offsetY + 1, 1000)
             // 2. Lock in place if it can't move
             // 3. Clear any lines
             // 4. Get new piece
@@ -87,7 +88,7 @@ export function createGame(loadedState = emptyGameState) {
 
         },
         movePieceDown: function() {
-
+            this.gamesState.activeTetromino.yPosition += 1
         },
         rotateClockwise: function() {
 
