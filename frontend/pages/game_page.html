@@ -34,6 +34,19 @@
     <script type="module" src="../scripts/game.js"></script>
     <script type="module" src="../scripts/gameController.js"></script>
     <script type="module" src="../scripts/move.js"></script>
+      <audio id="bg-music" src="music.mp3" autoplay loop></audio>
+
+
+    <script>
+        const bgMusic = document.getElementById("bg-music");
+
+    
+        document.addEventListener("click", () => {
+            if (bgMusic.paused) {
+                bgMusic.play();
+            }
+        });
+    </script>
 
 </body>
 </html>
