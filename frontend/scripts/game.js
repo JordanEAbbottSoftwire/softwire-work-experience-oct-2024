@@ -1,9 +1,13 @@
 import { createGame } from "./gameController.js";
+import { setupInput } from "./move.js";
 
 const gameController = createGame();
+setupInput(gameController);
 const canvasElement = document.getElementById("gamegrid");
 const ctx = canvasElement.getContext('2d');
 const cellSize = 20;
+
+gameController.clearLines();
 
 function drawBoard() {
 

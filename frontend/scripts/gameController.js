@@ -30,9 +30,9 @@ const TETROMINO_SHAPES = {
 
 // Gets a random piece name from TETROMINO_SHAPES
 function getRandomPiece() {
-    rand = Math.floor(Math.random() * 7);
-    block_list = Object.keys(TETROMINO_SHAPES);
-    shape = block_list[rand];
+    let rand = Math.floor(Math.random() * 7);
+    let block_list = Object.keys(TETROMINO_SHAPES);
+    let shape = block_list[rand];
     return {xPosition: 4, yPosition: 0, Piece: map_tetromino_shapes(shape)} ;
 }
 
@@ -50,8 +50,21 @@ function create2DArray(width, height) {
     return array;
 }
 
+function createTestArray(width, height) {
+    let array = new Array(height);
+    for (let i = 0; i < array.length; i++) {
+        if (i == array.length -1) {
+            array[i] = new Array(width).fill("cyan");
+        } else {
+            array[i] = new Array(width).fill(null);
+        }
+    }
+
+    return array;
+}
+
 const emptyGameState = {
-    gameBoard: create2DArray(WIDTH, HEIGHT),
+    gameBoard: createTestArray(WIDTH, HEIGHT),
     activeTetromino: getRandomPiece(),
     upcomingTetrominos: [getRandomPiece(), getRandomPiece(), getRandomPiece()],
     score: 0,
@@ -105,9 +118,22 @@ export function createGame(loadedState = emptyGameState) {
         },
         clearLines: function () {
 
-        },
+
+            // console.log(this.gamesState.gameBoard);
+            
+            // let row = 4;   
+            // let isFilled = true;
+            // for (var col = 0; col < landed[row].length; col++) {
+            //     if (landed[row][col] == 0) {
+            //         isFilled = false;
+            //     }
+            // }   
+            
+
+        }
     
     }
+
 
     return tetrisGame
 }

@@ -1,3 +1,11 @@
+let tetriscontroller;
+
+export function setupInput(gameController) {
+    document.addEventListener('keydown', handleKeyDown);
+    tetriscontroller = gameController
+
+}
+
 
 function handleKeyDown(event) {
     switch (event.code) {
@@ -27,6 +35,3 @@ function handleKeyDown(event) {
             break;
     }
 }
-
-
-document.addEventListener('keydown', handleKeyDown);
