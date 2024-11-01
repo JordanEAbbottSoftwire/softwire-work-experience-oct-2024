@@ -114,7 +114,7 @@ export function createGame(loadedState = emptyGameState) {
                 for (let j = 0; j < row.length; j++){
                     const el = row[j];
                     if (row[j] !== null) {
-                        cloneGameBoard[tetromino.xPosition + j][tetromino.yPosition + i] = row[j]
+                        cloneGameBoard[tetromino.yPosition + i][tetromino.xPosition + j] = row[j]
                     }
                 } 
             }
