@@ -88,7 +88,13 @@ export function createGame(loadedState = emptyGameState) {
 
         },
         movePieceDown: function() {
-            this.gamesState.activeTetromino.yPosition += 1
+            const cloneGameBoard = JSON.parse(JSON.stringify(this.gamesState.gameBoard))
+            const cloneTetromino = JSON.parse(JSON.stringify(this.gamesState.activeTetromino))
+
+            cloneTetromino.yPosition += 1
+            if (this.isStatePossible(cloneTetromino)) {
+                this.gamesState.activeTetromino = cloneTetromino
+            }
         },
         rotateClockwise: function() {
 
@@ -102,8 +108,28 @@ export function createGame(loadedState = emptyGameState) {
         getNextPiece: function() {
 
         },
-        checkCollision: function() {
-
+        isStatePossible: function(newTetromino) {
+            for (let i = 0; i < newTetromino.piece.length; i++){
+                const row = newTetromino.piece[i]
+                for (let j = 0; j < row.length; j++){
+                    const el = row[j];
+                    if (row[j] !== null) {
+                        if (newTetromino.yPosition + i > HEIGHT - 1) {
+                            return false
+                        }
+                        else if (newTetromino.xPosition + j> WIDTH -1 ) {
+                            return false
+                        }
+                        else if (newTetromino.xPosition + j < 0) {
+                            return false   
+                        }
+                        if (this.gamesState.gameBoard[newTetromino.yPosition + i][newTetromino.xPosition + j] !== null) {
+                            return false
+                        }
+                    }
+                } 
+            }
+            return true
         },
         lockPiece: function() {
 

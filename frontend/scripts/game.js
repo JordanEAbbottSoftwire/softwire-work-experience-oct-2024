@@ -24,7 +24,6 @@ function drawBoard() {
     }
 }
 
-drawBoard();
 
 function drawTetromino() {
     const tetromino = gameController.getGameState().activeTetromino
@@ -51,4 +50,6 @@ function gameLoop() {
     requestAnimationFrame(gameLoop)
 }
 
+
+drawBoard();
 gameLoop()
