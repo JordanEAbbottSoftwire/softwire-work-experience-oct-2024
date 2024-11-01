@@ -44,6 +44,26 @@ function map_tetromino_shapes(shape) {
     return TETROMINO_SHAPES[shape];
 }
 
+function rotateMatrixClockwise(matrix) {
+    const N = matrix.length;
+    let rotated = createEmptyGrid(N);
+    for (let row = 0; row < N; row++) {
+        for (let col = 0; col < N; col++) {
+            rotated[col][N - row - 1] = matrix[row][col];
+        }
+    }
+    return rotated;
+}
+function rotateMatrixCounterclockwise(matrix) {
+    const N = matrix.length;
+    let rotated = createEmptyGrid(N);
+    for (let row = 0; row < N; row++) {
+        for (let col = 0; col < N; col++) {
+            rotated[N - col - 1][row] = matrix[row][col];
+        }
+    }
+    return rotated;
+}
 
 function create2DArray(width, height) {
     let array = new Array(height);
