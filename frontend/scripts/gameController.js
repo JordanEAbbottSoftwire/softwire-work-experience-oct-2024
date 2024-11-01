@@ -44,6 +44,26 @@ function map_tetromino_shapes(shape) {
     return TETROMINO_SHAPES[shape];
 }
 
+function rotateMatrixClockwise(matrix) {
+    const N = matrix.length;
+    let rotated = createEmptyGrid(N);
+    for (let row = 0; row < N; row++) {
+        for (let col = 0; col < N; col++) {
+            rotated[col][N - row - 1] = matrix[row][col];
+        }
+    }
+    return rotated;
+}
+function rotateMatrixCounterclockwise(matrix) {
+    const N = matrix.length;
+    let rotated = createEmptyGrid(N);
+    for (let row = 0; row < N; row++) {
+        for (let col = 0; col < N; col++) {
+            rotated[N - col - 1][row] = matrix[row][col];
+        }
+    }
+    return rotated;
+}
 
 function create2DArray(width, height) {
     let array = new Array(height);
@@ -131,8 +151,22 @@ export function createGame(loadedState = emptyGameState) {
             }
             return true
         },
-        lockPiece: function() {
+        lockPiece: function () {
+            const cloneGameBoard = JSON.parse(JSON.stringify(this.gamesState.gameBoard))
+            const tetromino = this.gamesState.activeTetromino;
+            const piece = tetromino.piece;
 
+            for (let i = 0; i < piece.length; i++){
+                const row = piece[i]
+                for (let j = 0; j < row.length; j++){
+                    const el = row[j];
+                    if (row[j] !== null) {
+                        cloneGameBoard[tetromino.yPosition + i][tetromino.xPosition + j] = row[j]
+                    }
+                } 
+            }
+
+            this.gamesState.gameBoard = cloneGameBoard
         },
         clearLines: function () {
 
