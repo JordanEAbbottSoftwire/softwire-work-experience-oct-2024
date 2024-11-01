@@ -1,6 +1,8 @@
 import { createGame } from "./gameController.js";
 import { setupInput } from "./move.js";
 
+const frame_time = 50
+let frame_count = 0
 const gameController = createGame();
 setupInput(gameController);
 const canvasElement = document.getElementById("gamegrid");
@@ -26,4 +28,32 @@ function drawBoard() {
     }
 }
 
+
+function drawTetromino() {
+    const tetromino = gameController.getGameState().activeTetromino
+    const offsetX = tetromino.xPosition;
+    const offsetY = tetromino.yPosition;
+    tetromino.piece.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value) {
+                ctx.fillStyle = value; // You can change the color for each tetromino
+                ctx.fillRect((x + offsetX) * cellSize, (y + offsetY) * cellSize, cellSize, cellSize);
+            }
+        });
+    });
+}
+
+function gameLoop() {
+    frame_count += 1
+    if (frame_count >= frame_time) {
+        gameController.gameTick()
+        drawBoard()
+        drawTetromino()
+        frame_count = 0
+    }
+    requestAnimationFrame(gameLoop)
+}
+
+
 drawBoard();
+gameLoop()
