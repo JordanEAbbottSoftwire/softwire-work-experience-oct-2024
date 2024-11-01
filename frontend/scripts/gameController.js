@@ -33,7 +33,7 @@ function getRandomPiece() {
     let rand = Math.floor(Math.random() * 7);
     let block_list = Object.keys(TETROMINO_SHAPES);
     let shape = block_list[rand];
-    return {xPosition: 4, yPosition: 0, Piece: map_tetromino_shapes(shape)} ;
+    return {xPosition: 4, yPosition: 0, piece: map_tetromino_shapes(shape)} ;
 }
 
 function map_tetromino_shapes(shape) {
@@ -42,17 +42,17 @@ function map_tetromino_shapes(shape) {
 
 function rotateMatrixClockwise(matrix) {
     const N = matrix.length;
-    let rotated = createEmptyGrid(N);
+    let rotated = create2DArray(N,N);
     for (let row = 0; row < N; row++) {
         for (let col = 0; col < N; col++) {
-            rotated[col][N - row - 1] = matrix[row][col];
+            rotated[col][N - row - 1]  = matrix[row][col];
         }
     }
     return rotated;
 }
 function rotateMatrixCounterclockwise(matrix) {
     const N = matrix.length;
-    let rotated = createEmptyGrid(N);
+    let rotated = create2DArray(N,N);
     for (let row = 0; row < N; row++) {
         for (let col = 0; col < N; col++) {
             rotated[N - col - 1][row] = matrix[row][col];
@@ -70,21 +70,8 @@ function create2DArray(width, height) {
     return array;
 }
 
-function createTestArray(width, height) {
-    let array = new Array(height);
-    for (let i = 0; i < array.length; i++) {
-        if (i == array.length -1) {
-            array[i] = new Array(width).fill("cyan");
-        } else {
-            array[i] = new Array(width).fill(null);
-        }
-    }
-
-    return array;
-}
-
 const emptyGameState = {
-    gameBoard: createTestArray(WIDTH, HEIGHT),
+    gameBoard: create2DArray(WIDTH, HEIGHT),
     activeTetromino: getRandomPiece(),
     upcomingTetrominos: [getRandomPiece(), getRandomPiece(), getRandomPiece()],
     score: 0,
@@ -111,38 +98,55 @@ export function createGame(loadedState = emptyGameState) {
             return this.gamesState
         },
         movePieceRight: function() {
-
-        },
-        movePieceLeft: function() {
-
-        },
-        movePieceDown: function() {
-            const cloneGameBoard = JSON.parse(JSON.stringify(this.gamesState.gameBoard))
             const cloneTetromino = JSON.parse(JSON.stringify(this.gamesState.activeTetromino))
-
-            cloneTetromino.yPosition += 1
+            cloneTetromino.xPosition += 1
             if (this.isStatePossible(cloneTetromino)) {
                 this.gamesState.activeTetromino = cloneTetromino
             }
         },
+        movePieceLeft: function() {
+            const cloneTetromino = JSON.parse(JSON.stringify(this.gamesState.activeTetromino))
+            cloneTetromino.xPosition -= 1
+            if (this.isStatePossible(cloneTetromino)) {
+                this.gamesState.activeTetromino = cloneTetromino
+            }
+        },
+        movePieceDown: function() {
+            const cloneTetromino = JSON.parse(JSON.stringify(this.gamesState.activeTetromino))
+            cloneTetromino.yPosition += 1
+            if (this.isStatePossible(cloneTetromino)) {
+                this.gamesState.activeTetromino = cloneTetromino
+            } else {
+                this.lockPiece()
+            }
+        },
         rotateClockwise: function() {
-
+            const cloneTetromino = JSON.parse(JSON.stringify(this.gamesState.activeTetromino))
+            cloneTetromino.piece = rotateMatrixClockwise(cloneTetromino.piece)
+            if (this.isStatePossible(cloneTetromino)) {
+                this.gamesState.activeTetromino = cloneTetromino
+            }
         },
         rotateAnticlockwise: function() {
-
+            const cloneTetromino = JSON.parse(JSON.stringify(this.gamesState.activeTetromino))
+            cloneTetromino.piece = rotateMatrixCounterclockwise(cloneTetromino.piece)
+            if (this.isStatePossible(cloneTetromino)) {
+                this.gamesState.activeTetromino = cloneTetromino
+            }
         },
         instantDrop: function() {
 
         },
         getNextPiece: function() {
-
+            this.gamesState.activeTetromino = this.gamesState.upcomingTetrominos.shift()
+            this.gamesState.upcomingTetrominos.push(getRandomPiece())
         },
         isStatePossible: function(newTetromino) {
             for (let i = 0; i < newTetromino.piece.length; i++){
                 const row = newTetromino.piece[i]
                 for (let j = 0; j < row.length; j++){
                     const el = row[j];
-                    if (row[j] !== null) {
+                    if (el !== null) {
                         if (newTetromino.yPosition + i > HEIGHT - 1) {
                             return false
                         }
@@ -153,7 +157,10 @@ export function createGame(loadedState = emptyGameState) {
                             return false   
                         }
                         if (this.gamesState.gameBoard[newTetromino.yPosition + i][newTetromino.xPosition + j] !== null) {
+                            console.log(newTetromino.xPosition, newTetromino.yPosition)
+                            console.log(this.gamesState.gameBoard)
                             return false
+                            
                         }
                     }
                 } 
@@ -169,13 +176,14 @@ export function createGame(loadedState = emptyGameState) {
                 const row = piece[i]
                 for (let j = 0; j < row.length; j++){
                     const el = row[j];
-                    if (row[j] !== null) {
+                    if (el !== null) {
                         cloneGameBoard[tetromino.yPosition + i][tetromino.xPosition + j] = row[j]
                     }
                 } 
             }
 
             this.gamesState.gameBoard = cloneGameBoard
+            this.getNextPiece()
         },
         clearLines: function () {
 
