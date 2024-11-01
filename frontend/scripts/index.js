@@ -12,7 +12,7 @@ const addButtonListeners = () => {
     });
     
     hiscoresButton.addEventListener('click', () => {
-        window.location.href = '/pages/leaderboard.html';
+        window.location.href = '/pages/leaderboard.html?score=1000';
     });
 }
 

@@ -1,0 +1,72 @@
+content{
+    display: flex;
+    justify-content: flex-end; /* Use 'flex-end' instead of 'right' */
+    align-items: center; /* Center items vertically */
+    margin-top: 20px;
+    text-align: center;
+}
+
+.game_over_overall_sec{display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+}
+
+.text-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding:200px; 
+    background-color: rgb(3, 133, 133);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+}
+
+h1{
+    font-family: 'Press Start 2P', system-ui;
+font-size: 4em;     
+}
+
+body {
+    background-color: rgba(59, 63, 70, 0.4);
+    color: white;
+    padding: 20px; /* Adjusted to have consistent padding */
+    border-radius: 10px;
+    overflow: hidden;
+    background-image: url(../resources/background.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+button {
+    font-family: "Press Start 2P";
+    font-style: italic;
+    font-weight: 300;
+    font-size: 50px;
+    border-style: outset;
+    border-width: 15px;
+    border-color: gold;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(30, 211, 24);
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    padding: 20px;
+    width: fit-content; 
+    margin: 10px 0; 
+   
+    }
+
+    
+
+button:hover {
+    margin-top: 10px;
+    border-width: 5px; 
+}
