@@ -59,3 +59,30 @@ td:first-child {
         width: 100%;
     }
 }
+button {
+    font-family: "Press Start 2P";
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20px;
+    border-style: outset;
+    border-width: 15px;
+    border-color: gold;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(30, 211, 24);
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    padding: 30px;
+    width: fit-content; 
+   
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust spacing as needed */
+}
+
+
+
+
+

@@ -1,11 +1,15 @@
 import { createGame } from "./gameController.js";
+import { setupInput } from "./move.js";
 
 const frame_time = 50
 let frame_count = 0
 const gameController = createGame();
+setupInput(gameController);
 const canvasElement = document.getElementById("gamegrid");
 const ctx = canvasElement.getContext('2d');
 const cellSize = 20;
+
+gameController.clearLines();
 
 function drawBoard() {
 

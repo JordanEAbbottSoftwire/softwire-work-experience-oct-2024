@@ -20,11 +20,13 @@ body {
     padding: 0px 20px 20px 20px;
     border-radius: 10px;
     overflow: hidden;
+    
 }
 
 .instruction_title {
     font-family: 'Press Start 2P', system-ui;
     font-size: 3em;
+    
 }
 
 .sub_instructions_titles {
@@ -45,14 +47,20 @@ li {
 }
 
 button {
-    font-size: 3em;
-    color: black;
-    background-color: rgb(199, 233, 147);
-    border-color: black;
-    border-style:groove;
-    border-radius: 10px;
-    padding: 10px 20px;
-    border: 2px solid;
+    font-family: "Press Start 2P";
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20px;
+    border-style: outset;
+    border-width: 15px;
+    border-color: gold;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(30, 211, 24);
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    padding: 30px;
+    width: fit-content; 
 }
 
 button:hover {
