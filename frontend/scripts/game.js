@@ -38,3 +38,5 @@ function drawTetromino(tetromino) {
 }
 
 drawTetromino(gameController.gamesState.activeTetromino);
+
+gameController.lockPiece();

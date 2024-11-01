@@ -104,8 +104,22 @@ export function createGame(loadedState = emptyGameState) {
         checkCollision: function() {
 
         },
-        lockPiece: function() {
+        lockPiece: function () {
+            const cloneGameBoard = JSON.parse(JSON.stringify(this.gamesState.gameBoard))
+            const tetromino = this.gamesState.activeTetromino;
+            const piece = tetromino.piece;
 
+            for (let i = 0; i < piece.length; i++){
+                const row = piece[i]
+                for (let j = 0; j < row.length; j++){
+                    const el = row[j];
+                    if (row[j] !== null) {
+                        cloneGameBoard[tetromino.xPosition + j][tetromino.yPosition + i] = row[j]
+                    }
+                } 
+            }
+
+            this.gamesState.gameBoard = cloneGameBoard
         },
         clearLines: function () {
 
